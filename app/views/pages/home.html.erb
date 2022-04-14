@@ -3,6 +3,7 @@
 
 <% if user_signed_in? %>
   <div>
+    <p><%= link_to "New project", new_project_path %></p>
     <% @projects.each do |project| %>
       <p><%= project.name %></p>
       <p><%= project.description %></p>

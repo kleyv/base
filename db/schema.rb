@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2022_04_14_104608) do
   enable_extension "plpgsql"
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
+    t.string "name", default: "", null: false
+    t.text "description", default: "", null: false
     t.bigint "creator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

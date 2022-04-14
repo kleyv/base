@@ -1,5 +1,6 @@
 puts "Cleaning database"
 User.destroy_all
+Project.destroy_all
 
 puts "Creating user"
 guest = User.create!(
@@ -14,3 +15,6 @@ project = Project.create!(
   description:"Default project",
   creator: guest
 )
+
+puts "Creating project chat"
+projectChat = Chat.create! chatable: project, name: "chat"

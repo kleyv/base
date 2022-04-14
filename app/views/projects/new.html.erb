@@ -1,0 +1,8 @@
+<%= link_to "Back", root_path %>
+<h1>New project</h1>
+
+<%= simple_form_for @project do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.submit class: "btn btn-primary w-100" %>
+<% end %>

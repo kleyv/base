@@ -7,3 +7,10 @@ guest = User.create!(
   email: "guest@email.com",
   password: "password"
 )
+
+puts "Creating project"
+project = Project.create!(
+  name:"Default project",
+  description:"Default project",
+  creator: guest
+)

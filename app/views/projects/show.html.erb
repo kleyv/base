@@ -1,3 +1,6 @@
 <%= link_to "Back", root_path %>
 <h1><%= @project.name %></h1>
+<p>Project page to include project's boards</p>
 <h2><%= @project.description %></h2>
+
+<h3><%= link_to "Chat", project_chat_path(@project, @chat) %></h3>

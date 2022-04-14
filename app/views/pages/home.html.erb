@@ -6,7 +6,6 @@
     <p><%= link_to "New project", new_project_path %></p>
     <% @projects.each do |project| %>
       <p><%= link_to project.name, project_path(project) %></p>
-      <p><%= project.description %></p>
     <% end %>
   </div>
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>

@@ -1,3 +1,14 @@
 <%= link_to "Back", project_path(@chat.chatable) %>
 <h1>Chat</h1>
 <p>Chat page to include chat's messages</p>
+<% @messages.each do |message| %>
+  <div class="message" id=<%= message.id %>>
+    <p><%= message.author.username  %></p>
+    <p><%= message.created_at %></p>
+    <p><%= message.content %></p>
+  </div>
+<% end %>
+<%= simple_form_for [@chat, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

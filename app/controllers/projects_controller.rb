@@ -7,7 +7,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.creator = current_user
     if @project.save
-      redirect_to root_path
+      @chat = Chat.create! name: "Chat", chatable: @project
+      redirect_to project_path(@project)
     else
       render :new
     end
